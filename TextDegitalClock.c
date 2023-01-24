@@ -1,15 +1,15 @@
 /*
 
-2603 ±è¼ºÀ±
-Ãß°¡±³À°°úÁ¤ ÀÚÀ² ÇÁ·Î±×·¡¹Ö °úÁ¦
+2603 ê¹€ì„±ìœ¤
+ì¶”ê°€êµìœ¡ê³¼ì • ìžìœ¨ í”„ë¡œê·¸ëž˜ë° ê³¼ì œ
 
-<µðÁöÅÐ ½Ã°è ÇÁ·ÎÁ§Æ®>
-ÇöÀç ½Ã°£À» ÁÂÇ¥ ´Ù·ç´Â Å×Å©´ÐÀ» ÅëÇØ ÅØ½ºÆ®·Î ÄÜ¼ÖÃ¢¿¡ ³ªÅ¸³¿.
-´ÜÀÏ ÇÁ·Î±×·¥À¸·Î ÀÛµ¿ÇÏµµ·Ï ¼­¹ö³ª ¿ÜºÎ ¶óÀÌºê·¯¸®°¡ ¾Æ´Ñ Çì´õÆÄÀÏÀ» ÀÌ¿ëÇØ ½Ã°£À» ºÒ·¯¿Í ÀÛ¼º.
+<ë””ì§€í„¸ ì‹œê³„ í”„ë¡œì íŠ¸>
+í˜„ìž¬ ì‹œê°„ì„ ì¢Œí‘œ ë‹¤ë£¨ëŠ” í…Œí¬ë‹‰ì„ í†µí•´ í…ìŠ¤íŠ¸ë¡œ ì½˜ì†”ì°½ì— ë‚˜íƒ€ëƒ„.
+ë‹¨ì¼ í”„ë¡œê·¸ëž¨ìœ¼ë¡œ ìž‘ë™í•˜ë„ë¡ ì„œë²„ë‚˜ ì™¸ë¶€ ë¼ì´ë¸ŒëŸ¬ë¦¬ê°€ ì•„ë‹Œ í—¤ë”íŒŒì¼ì„ ì´ìš©í•´ ì‹œê°„ì„ ë¶ˆëŸ¬ì™€ ìž‘ì„±.
 
 */
 
-#define _CRT_SECURE_NO_WARNINGS //Warring ¹æÁö
+#define _CRT_SECURE_NO_WARNINGS //Warring ë°©ì§€
 
 #include <stdio.h>
 #include <time.h>
@@ -20,24 +20,24 @@ void arrIn(char* clockDigits, int digit, int beginNumber);
 
 void printTime(struct tm* t1)
 {
-	char clockDigits[5][33] = { 0, }; // ¹è¿­ Å©±â 
+	char clockDigits[5][33] = { 0, }; // ë°°ì—´ í¬ê¸° 
 
-	arrIn(clockDigits, (t1->tm_hour / 10), 0); // ½Ã°£ 10ÀÇ ÀÚ¸®
-	arrIn(clockDigits, (t1->tm_hour % 10), 5); // ½Ã°£ 1ÀÇ ÀÚ¸®
-	arrIn(clockDigits, (t1->tm_min / 10), 12); // ºÐ 10ÀÇ ÀÚ¸®
-	arrIn(clockDigits, (t1->tm_min % 10), 17); // ºÐ 1ÀÇ ÀÚ¸®
-	arrIn(clockDigits, (t1->tm_sec / 10), 24); // ½Ã°£ 10ÀÇ ÀÚ¸®
-	arrIn(clockDigits, (t1->tm_sec % 10), 29); // ½Ã°£ 1ÀÇ ÀÚ¸®
+	arrIn(clockDigits, (t1->tm_hour / 10), 0); // ì‹œê°„ 10ì˜ ìžë¦¬
+	arrIn(clockDigits, (t1->tm_hour % 10), 5); // ì‹œê°„ 1ì˜ ìžë¦¬
+	arrIn(clockDigits, (t1->tm_min / 10), 12); // ë¶„ 10ì˜ ìžë¦¬
+	arrIn(clockDigits, (t1->tm_min % 10), 17); // ë¶„ 1ì˜ ìžë¦¬
+	arrIn(clockDigits, (t1->tm_sec / 10), 24); // ì‹œê°„ 10ì˜ ìžë¦¬
+	arrIn(clockDigits, (t1->tm_sec % 10), 29); // ì‹œê°„ 1ì˜ ìžë¦¬
 
 	for (int i = 0; i < 5; i++)
 	{
 		for (int j = 0; j < 33; j++)
 		{
 			if (clockDigits[i][j] == 1)
-				printf("¡á");
+				printf("â– ");
 
 			else if ((i == 1 || i == 3) && (j == 10 || j == 22))
-				printf("¡á");
+				printf("â– ");
 
 			else
 				printf("  ");
@@ -50,70 +50,70 @@ void arrIn(char clockDigits[][33], int digit, int beginNumber)
 {
 	char numDigits[10][5][4] =
 	{
-		{	// 0À» Ç¥½Ã
+		{	// 0ì„ í‘œì‹œ
 		{1,1,1,1},
 		{1,0,0,1},
 		{1,0,0,1},
 		{1,0,0,1},
 		{1,1,1,1}
 		},
-		{	// 1À» Ç¥½Ã
+		{	// 1ì„ í‘œì‹œ
 		{0,0,0,1},
 		{0,0,0,1},
 		{0,0,0,1},
 		{0,0,0,1},
 		{0,0,0,1}
 		},
-		{	// 2¸¦ Ç¥½Ã
+		{	// 2ë¥¼ í‘œì‹œ
 		{1,1,1,1},
 		{0,0,0,1},
 		{1,1,1,1},
 		{1,0,0,0},
 		{1,1,1,1}
 		},
-		{	// 3À» Ç¥½Ã
+		{	// 3ì„ í‘œì‹œ
 		{1,1,1,1},
 		{0,0,0,1},
 		{0,1,1,1},
 		{0,0,0,1},
 		{1,1,1,1}
 		},
-		{	// 4¸¦ Ç¥½Ã
+		{	// 4ë¥¼ í‘œì‹œ
 		{1,0,0,1},
 		{1,0,0,1},
 		{1,1,1,1},
 		{0,0,0,1},
 		{0,0,0,1}
 		},
-		{	// 5À» Ç¥½Ã
+		{	// 5ì„ í‘œì‹œ
 		{1,1,1,1},
 		{1,0,0,0},
 		{1,1,1,1},
 		{0,0,0,1},
 		{1,1,1,1}
 		},
-		{	// 6À» Ç¥½Ã
+		{	// 6ì„ í‘œì‹œ
 		{1,1,1,1},
 		{1,0,0,0},
 		{1,1,1,1},
 		{1,0,0,1},
 		{1,1,1,1}
 		},
-		{	// 7À» Ç¥½Ã
+		{	// 7ì„ í‘œì‹œ
 		{1,1,1,1},
 		{0,0,0,1},
 		{0,0,0,1},
 		{0,0,0,1},
 		{0,0,0,1}
 		},
-		{	// 8À» Ç¥½Ã
+		{	// 8ì„ í‘œì‹œ
 		{1,1,1,1},
 		{1,0,0,1},
 		{1,1,1,1},
 		{1,0,0,1},
 		{1,1,1,1}
 		},
-		{	// 9¸¦ Ç¥½Ã
+		{	// 9ë¥¼ í‘œì‹œ
 		{1,1,1,1},
 		{1,0,0,1},
 		{1,1,1,1},
@@ -144,7 +144,7 @@ int main(void)
 		time(&curr);
 		curTime = localtime(&curr);
 
-		printf("ÇÁ·Î±×·¥ Á¾·á :  CTRL + C \n\n");
+		printf("í”„ë¡œê·¸ëž¨ ì¢…ë£Œ :  CTRL + C \n\n");
 
 		printTime(curTime);
 		Sleep(100);
