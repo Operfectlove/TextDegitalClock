@@ -144,7 +144,7 @@ int main(void)
 {
 	int yn;
 	printf("시간을 출력할까요?(Yes : 1 / NO : 0)");
-	scnaf_s("%d", &yn); // 비주얼스튜디오에서 실행
+	scanf_s("%d", &yn); // 비주얼스튜디오에서 실행
 	//scanf("%d", &yn); // 다른 IDE에서 실행
 	
 	if(yn == 0)
